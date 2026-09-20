@@ -36,31 +36,31 @@ const researchInterests = [
 const workingPapers = [
   {
     title: 'Shine on Small Mines: Size-Based Economic Effects of Coal Mine Closure',
-    authors: 'C. Li and Y. Lu',
+    authors: 'With Y. Lu',
     status: 'Under Peer Review',
     year: '2025',
   },
   {
     title: 'Data Center Exposure and Coal Plant Retirement Timelines',
-    authors: 'C. Li, Y. Zhang, Y. Xu, and Y. Lu',
+    authors: 'With Y. Zhang et al.',
     status: 'Accepted',
     year: '2025',
   },
   {
     title: 'Geopolitical Alliances Shape Foreign Direct Investment Patterns in Energy Transition Minerals',
-    authors: 'Y. Xu, C. Li, J. Xiong, Y. Lu, and Y. Geng',
+    authors: 'With Y. Xu et al.',
     status: 'Submitted',
     year: '2025',
   },
   {
     title: 'Public Toilets, Rural Health and Family Income: Evidence from China',
-    authors: 'C. Li, Y. Guo, and P. Liang',
+    authors: 'With Y. Guo and P. Liang',
     status: 'Under Peer Review',
     year: '2025',
   },
   {
     title: 'Why is There so much Surveillance in China: An Explanation from a Fiscal Perspective',
-    authors: 'Y. Guo, C. Li, and P. Liang',
+    authors: 'With Y. Guo and P. Liang',
     status: 'R&R',
     year: '2025',
   },
