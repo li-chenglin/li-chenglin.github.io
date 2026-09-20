@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGitHubPages ? "/chenglin-homepage" : "";
+const isRootPagesSite = process.env.GITHUB_REPOSITORY === "li-chenglin/li-chenglin.github.io";
+const basePath = isGitHubPages && !isRootPagesSite ? "/chenglin-homepage" : "";
 
 const nextConfig: NextConfig = {
   output: "export",
