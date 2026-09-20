@@ -8,6 +8,11 @@ const buildDir = resolve(root, ".cv-build");
 const output = resolve(root, "public", "cv.pdf");
 const builtPdf = resolve(buildDir, basename(source, ".tex") + ".pdf");
 
+if (process.env.SKIP_CV_BUILD === "1") {
+  console.log("Using the committed public/cv.pdf for this build.");
+  process.exit(0);
+}
+
 if (!existsSync(source)) {
   console.error(`CV source not found: ${source}`);
   process.exit(1);
