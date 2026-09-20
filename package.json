@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "cv": "node scripts/build-cv.mjs",
+    "cv:watch": "node scripts/watch-cv.mjs",
+    "prebuild": "npm run cv",
+    "dev": "node scripts/dev.mjs",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
