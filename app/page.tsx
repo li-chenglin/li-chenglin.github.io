@@ -12,6 +12,8 @@ const navItems = [
 
 type PageId = (typeof navItems)[number]['id'];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const researchInterests = [
   {
     title: 'Fossil Fuel Phase-out',
@@ -327,7 +329,7 @@ export default function Home() {
 
                 <div>
                   <Image
-                    src="/photo.jpg"
+                    src={`${basePath}/photo.jpg`}
                     alt="Chenglin Li"
                     width={720}
                     height={720}
@@ -418,7 +420,7 @@ export default function Home() {
                 <h2 className="mt-2 font-serif text-3xl font-normal text-[var(--ink)]">Chenglin Li</h2>
               </div>
               <a
-                href="/cv.pdf"
+                href={`${basePath}/cv.pdf`}
                 download
                 className="inline-flex h-10 items-center gap-2 border border-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent)] transition-colors hover:border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--ink)]"
               >
@@ -428,7 +430,7 @@ export default function Home() {
             </div>
 
             <div className="border border-[var(--line)] p-2">
-              <iframe src="/cv.pdf" className="h-[78vh] w-full border-0" title="Chenglin Li CV" />
+              <iframe src={`${basePath}/cv.pdf`} className="h-[78vh] w-full border-0" title="Chenglin Li CV" />
             </div>
           </div>
         );
