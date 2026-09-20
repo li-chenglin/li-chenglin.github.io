@@ -327,7 +327,7 @@ export default function Home() {
 
                 </div>
 
-                <div>
+                <div className="mx-auto w-full max-w-[23rem] lg:mx-0">
                   <Image
                     src={`${basePath}/photo.jpg`}
                     alt="Chenglin Li"
