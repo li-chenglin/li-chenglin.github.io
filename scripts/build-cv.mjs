@@ -23,7 +23,7 @@ mkdirSync(buildDir, { recursive: true });
 const result = spawnSync(
   "latexmk",
   [
-    "-pdf",
+    "-xelatex",
     "-interaction=nonstopmode",
     "-halt-on-error",
     `-outdir=${buildDir}`,

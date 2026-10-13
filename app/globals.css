@@ -136,10 +136,20 @@ body {
 }
 
 .site-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
   color: var(--ink);
   font-size: 2rem;
   line-height: 1.1;
   transition: color 180ms ease;
+}
+
+.site-name-zh {
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
 }
 
 .site-name:hover {

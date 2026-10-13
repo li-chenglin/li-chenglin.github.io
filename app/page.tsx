@@ -451,7 +451,8 @@ export default function Home() {
             onClick={() => selectPage('home')}
             className="font-name site-name"
           >
-            Chenglin Li
+            <span>Chenglin Li</span>
+            <span lang="zh" className="site-name-zh">李成林</span>
           </button>
 
           <div className="hidden items-center gap-1 md:flex">
