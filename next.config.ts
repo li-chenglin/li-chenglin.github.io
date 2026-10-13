@@ -5,6 +5,9 @@ const isRootPagesSite = process.env.GITHUB_REPOSITORY === "li-chenglin/li-chengl
 const basePath = isGitHubPages && !isRootPagesSite ? "/chenglin-homepage" : "";
 
 const nextConfig: NextConfig = {
+  ...(process.env.HOMEPAGE_BUILD_ROOT
+    ? { turbopack: { root: process.env.HOMEPAGE_BUILD_ROOT } }
+    : {}),
   output: "export",
   trailingSlash: true,
   images: {

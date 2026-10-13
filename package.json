@@ -7,6 +7,10 @@
     "cv:watch": "node scripts/watch-cv.mjs",
     "prebuild": "npm run cv",
     "dev": "node scripts/dev.mjs",
+    "sync:start": "node scripts/sync-control.mjs start",
+    "sync:stop": "node scripts/sync-control.mjs stop",
+    "sync:status": "node scripts/sync-control.mjs status",
+    "test:sync": "node --test scripts/auto-sync.test.mjs",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint"
