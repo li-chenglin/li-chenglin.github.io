@@ -144,6 +144,8 @@ body {
 }
 
 .profile-name span {
+  display: block;
+  margin-top: 0.12rem;
   color: var(--muted);
   font-family: var(--font-body);
   font-size: 0.85em;
