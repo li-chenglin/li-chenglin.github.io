@@ -139,10 +139,8 @@ function DownloadIcon() {
 
 function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
   return (
-    <div className="mb-9 flex items-end justify-between pb-4">
-      <h2 className="font-section relative text-[0.78rem] font-semibold uppercase text-[var(--accent)] after:absolute after:-bottom-4 after:left-0 after:h-0.5 after:w-16 after:bg-[var(--gold)]">
-        {eyebrow}
-      </h2>
+    <div className="section-header flex items-end justify-between">
+      <h2>{eyebrow}</h2>
       {title ? <p className="hidden text-sm text-[var(--muted)] sm:block">{title}</p> : null}
     </div>
   );
@@ -162,8 +160,8 @@ function PaperItem({
   reprintUrl?: string;
 }) {
   return (
-    <article className="border-b border-[var(--line)] py-5">
-      <p className="mb-3 text-[0.7rem] font-semibold uppercase leading-5 tracking-[0.12em] text-[var(--gold-dark)]">
+    <article className="paper-item">
+      <p className="paper-meta">
         {meta}
         {reprintUrl ? (
           <>
@@ -180,10 +178,8 @@ function PaperItem({
           </>
         ) : null}
       </p>
-      <h3 className="font-paper max-w-4xl text-[1rem] leading-snug text-[var(--ink)] sm:text-[1.1rem]">
-        {title}
-      </h3>
-      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{authors}</p>
+      <h3 className="paper-title">{title}</h3>
+      <p className="paper-authors">{authors}</p>
       {url ? (
         <a
           href={url}
@@ -213,10 +209,10 @@ function TeachingItem({
   term: string;
 }) {
   return (
-    <article className="grid gap-3 border-b border-[var(--line)] py-5 sm:grid-cols-[7.5rem_1fr]">
-      <p className="text-[0.7rem] font-semibold uppercase leading-5 tracking-[0.12em] text-[var(--gold-dark)]">{term}</p>
+    <article className="teaching-item">
+      <p className="paper-meta">{term}</p>
       <div>
-        <h3 className="font-paper text-[1.08rem] leading-snug text-[var(--ink)] sm:text-[1.22rem]">
+        <h3 className="teaching-title text-[1.12rem] sm:text-[1.22rem]">
           {code}: {title}
         </h3>
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -234,20 +230,21 @@ export default function Home() {
   const selectPage = (page: PageId) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0 });
   };
 
   const renderContent = () => {
     switch (currentPage) {
       case 'home':
         return (
-          <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
-            <section className="border-b border-[var(--line)] pb-10">
-              <div className="grid gap-10 lg:grid-cols-[1fr_23rem] lg:items-start">
-                <div className="pt-2">
-                  <p className="font-section mb-4 text-[0.72rem] font-semibold uppercase text-[var(--accent)]">
+          <div>
+            <section className="site-container profile-section">
+              <div className="profile-layout">
+                <div className="profile-copy">
+                    <h1 className="profile-label">
                     Academic Profile
-                  </p>
-                  <p className="mt-6 max-w-2xl text-[1.02rem] leading-8 text-[var(--ink)]">
+                  </h1>
+                  <p className="profile-lead">
                     I am a Ph.D. candidate in Innovation, Policy and Entrepreneurship at{' '}
                     <a
                       href="https://www.hkust-gz.edu.cn/"
@@ -260,7 +257,7 @@ export default function Home() {
                       .
 
                   </p>
-                  <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-[var(--muted)]">
+                  <p className="profile-paragraph">
                     My interdisciplinary research examines the socioeconomic impacts of the global energy
                     transition, with a special focus on how societies can strategically manage the
                     consequences of fossil fuel phase-out and reconcile ambitious climate targets with
@@ -268,7 +265,7 @@ export default function Home() {
                     development economics and political economy, using quantitative economic methods to
                     evaluate policy effectiveness and the consequences of social change.
                   </p>
-                  <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-[var(--muted)]">
+                  <p className="profile-paragraph">
                     Before my Ph.D. research, I obtained a Master&apos;s degree in Public Administration from{' '}
                     <a
                       href="https://www.sysu.edu.cn/sysuen/"
@@ -289,8 +286,8 @@ export default function Home() {
                     </a>
                     .
                   </p>
-                  <div className="mt-9 border-t border-[var(--line)] pt-5">
-                    <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm leading-6 text-[var(--ink)]">
+                  <div className="profile-contact">
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs leading-6 text-[var(--muted)]">
                       <a
                         href="mailto:chenglin.li@connect.hkust-gz.edu.cn"
                         className="inline-flex items-center gap-2 transition-colors hover:text-[var(--accent)]"
@@ -327,7 +324,7 @@ export default function Home() {
 
                 </div>
 
-                <div className="mx-auto w-full max-w-[23rem] lg:mx-0">
+                <div className="profile-portrait">
                   <Image
                     src={`${basePath}/photo.jpg`}
                     alt="Chenglin Li"
@@ -340,15 +337,20 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="mt-12">
+            <section className="interests-band">
+              <div className="site-container interests-layout">
               <SectionHeader eyebrow="Research Interests" title="" />
-              <div className="grid gap-x-10 md:grid-cols-2">
-                {researchInterests.map((interest) => (
-                  <article key={interest.title} className="border-b border-[var(--line)] py-4">
-                    <h3 className="font-paper text-[1rem] tracking-normal text-[var(--ink)] sm:text-[1.06rem]">{interest.title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{interest.description}</p>
+              <div className="interest-list">
+                {researchInterests.map((interest, index) => (
+                  <article key={interest.title} className="interest-item">
+                    <span aria-hidden="true" className="interest-index">{String(index + 1).padStart(2, '0')}</span>
+                    <div className="interest-copy">
+                      <h3 className="interest-title text-[1.02rem] sm:text-[1.08rem]">{interest.title}</h3>
+                      <p className="mt-2 text-[0.92rem] leading-7 text-[var(--muted)]">{interest.description}</p>
+                    </div>
                   </article>
                 ))}
+              </div>
               </div>
             </section>
 
@@ -357,8 +359,8 @@ export default function Home() {
 
       case 'teaching':
         return (
-          <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
-            <section>
+          <div className="site-container archive-page">
+            <section className="editorial-section">
               <SectionHeader eyebrow="Teaching" title="" />
               <div>
                 {teachingSessions.map((session) => (
@@ -378,8 +380,8 @@ export default function Home() {
 
       case 'research':
         return (
-          <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-14">
-            <section>
+          <div className="site-container archive-page">
+            <section className="editorial-section">
               <SectionHeader eyebrow="Working Papers" title="" />
               <div>
                 {workingPapers.map((paper) => (
@@ -393,7 +395,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="mt-12">
+            <section className="editorial-section">
               <SectionHeader eyebrow="Publications" title="" />
               <div>
                 {publications.map((paper) => (
@@ -413,7 +415,7 @@ export default function Home() {
 
       case 'cv':
         return (
-          <div className="mx-auto max-w-6xl px-5 py-8 sm:px-8 sm:py-12">
+          <div className="site-container archive-page">
             <div className="mb-5 flex items-center justify-between gap-4 border-b border-[var(--line)] pb-5">
               <div>
                 <p className="font-section text-[0.72rem] font-semibold uppercase text-[var(--accent-dark)]">Curriculum Vitae</p>
@@ -422,7 +424,7 @@ export default function Home() {
               <a
                 href={`${basePath}/cv.pdf`}
                 download
-                className="inline-flex h-10 items-center gap-2 border border-[var(--accent)] px-4 text-sm font-semibold text-[var(--accent)] transition-colors hover:border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--ink)]"
+                className="download-link inline-flex h-10 items-center gap-2 px-4 text-sm font-semibold"
               >
                 <DownloadIcon />
                 PDF
@@ -441,28 +443,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--background)] text-[var(--ink)]">
-      <nav className="sticky top-0 z-50 border-b border-[var(--accent-dark)] bg-[var(--accent)] backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+    <div className="site-shell min-h-screen bg-[var(--background)] text-[var(--ink)]">
+      <nav className="site-nav sticky top-0 z-50" aria-label="Main navigation">
+        <div className="site-container nav-inner">
           <button
             type="button"
             onClick={() => selectPage('home')}
-            className="font-name text-lg font-semibold leading-none text-white transition-colors hover:text-[var(--gold)]"
+            className="font-name site-name"
           >
             Chenglin Li
           </button>
 
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
-              <button
+            <button
                 key={item.id}
                 type="button"
                 onClick={() => selectPage(item.id)}
-                className={`h-9 px-4 text-sm transition-colors ${
-                  currentPage === item.id
-                    ? 'text-white underline decoration-[var(--gold)] decoration-2 underline-offset-8'
-                    : 'text-white/78 hover:text-white'
-                }`}
+                aria-current={currentPage === item.id ? 'page' : undefined}
+                className={`nav-link h-10 px-4 text-[0.9rem] ${currentPage === item.id ? 'nav-link-active' : ''}`}
               >
                 {item.label}
               </button>
@@ -471,7 +470,7 @@ export default function Home() {
 
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center border border-white/30 text-white md:hidden"
+            className="menu-toggle grid h-10 w-10 place-items-center md:hidden"
             onClick={() => setIsMenuOpen((open) => !open)}
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
@@ -492,16 +491,15 @@ export default function Home() {
         </div>
 
         {isMenuOpen && (
-          <div className="border-t border-white/20 bg-[var(--accent)] px-5 py-4 md:hidden">
+          <div className="mobile-menu px-5 py-4 md:hidden">
             <div className="mx-auto grid max-w-6xl gap-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   type="button"
                   onClick={() => selectPage(item.id)}
-                  className={`h-11 text-left text-base font-medium ${
-                    currentPage === item.id ? 'text-white underline decoration-[var(--gold)] underline-offset-4' : 'text-white/78'
-                  }`}
+                  aria-current={currentPage === item.id ? 'page' : undefined}
+                  className={`mobile-nav-link h-11 text-left text-base font-medium ${currentPage === item.id ? 'mobile-nav-active' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -511,10 +509,10 @@ export default function Home() {
         )}
       </nav>
 
-      <main>{renderContent()}</main>
+      <main key={currentPage} className="page-content">{renderContent()}</main>
 
       <footer className="border-t border-[var(--line)] bg-[var(--paper)]">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="site-container flex flex-col gap-3 py-8 text-[0.78rem] text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 Chenglin Li. All rights reserved.</p>
         </div>
       </footer>
