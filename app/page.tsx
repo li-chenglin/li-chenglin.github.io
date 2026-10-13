@@ -449,7 +449,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => selectPage('home')}
-            className="font-name site-name"
+            className="site-name"
           >
             <span>Chenglin Li</span>
             <span lang="zh" className="site-name-zh">（李成林）</span>
