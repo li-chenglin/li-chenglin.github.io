@@ -146,10 +146,10 @@ body {
 }
 
 .site-name-zh {
-  color: var(--ink);
+  color: var(--muted);
   font-family: var(--font-body);
-  font-size: 1.15rem;
-  font-weight: 500;
+  font-size: inherit;
+  font-weight: 400;
 }
 
 .site-name:hover {
