@@ -452,7 +452,7 @@ export default function Home() {
             className="site-name"
           >
             <span>Chenglin Li</span>
-            <span lang="zh" className="site-name-zh">（李成林）</span>
+            <span lang="zh" className="site-name-zh">李成林</span>
           </button>
 
           <div className="hidden items-center gap-1 md:flex">
