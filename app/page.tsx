@@ -333,6 +333,9 @@ export default function Home() {
                     priority
                     className="aspect-[4/5] w-full object-cover object-[50%_32%]"
                   />
+                  <h2 className="profile-name font-section">
+                    Chenglin Li <span lang="zh">(李成林)</span>
+                  </h2>
                 </div>
               </div>
             </section>
@@ -419,7 +422,6 @@ export default function Home() {
             <div className="mb-5 flex items-center justify-between gap-4 border-b border-[var(--line)] pb-5">
               <div>
                 <p className="font-section text-[0.72rem] font-semibold uppercase text-[var(--accent-dark)]">Curriculum Vitae</p>
-                <h2 className="mt-2 font-serif text-3xl font-normal text-[var(--ink)]">Chenglin Li</h2>
               </div>
               <a
                 href={`${basePath}/cv.pdf`}
@@ -446,15 +448,6 @@ export default function Home() {
     <div className="site-shell min-h-screen bg-[var(--background)] text-[var(--ink)]">
       <nav className="site-nav sticky top-0 z-50" aria-label="Main navigation">
         <div className="site-container nav-inner">
-          <button
-            type="button"
-            onClick={() => selectPage('home')}
-            className="site-name"
-          >
-            <span>Chenglin Li</span>
-            <span lang="zh" className="site-name-zh">(李成林)</span>
-          </button>
-
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
             <button
