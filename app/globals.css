@@ -92,7 +92,7 @@ body {
 
 .font-name {
   font-family: var(--font-name);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
 }
 
@@ -148,7 +148,7 @@ body {
 .site-name-zh {
   color: var(--muted);
   font-family: var(--font-body);
-  font-size: inherit;
+  font-size: 1.15em;
   font-weight: 400;
 }
 
