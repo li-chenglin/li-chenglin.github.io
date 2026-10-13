@@ -16,20 +16,20 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const researchInterests = [
   {
-    title: 'Fossil Fuel Phase-out',
-    description: 'Socioeconomic impacts of coal phase-out, stranded assets, and local transition costs.',
+    title: 'Fossil Fuel Phase-Out & Energy Transition',
+    description: 'Socioeconomic analysis of coal phase-out, just transition.',
   },
   {
-    title: 'Climate & Environmental Economics',
-    description: 'Extreme natural disasters, climate adaptation, public health, and policy resilience.',
+    title: 'AI and Energy',
+    description: 'Power and AI infrastructure, social challenges and solutions under data center expansion.',
   },
   {
-    title: 'Public Economy',
-    description: 'Governmental fiscal behavior, procurement, and government-citizen relationships.',
+    title: 'Climate Change Economics',
+    description: 'Public attitudes under extreme weather.',
   },
   {
-    title: 'Policy Analysis & Applied Economics',
-    description: 'Causal inference, macro- and microeconomic data analysis, and institutional design.',
+    title: 'Public & Development Economics',
+    description: 'Governmental fiscal behavior, public investment and procurement.',
   },
 ];
 
