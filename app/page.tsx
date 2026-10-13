@@ -334,7 +334,7 @@ export default function Home() {
                     className="aspect-[4/5] w-full object-cover object-[50%_32%]"
                   />
                   <h2 className="profile-name font-section">
-                    Chenglin Li <span lang="zh">(李成林)</span>
+                    Chenglin Li <span lang="zh">李成林</span>
                   </h2>
                 </div>
               </div>

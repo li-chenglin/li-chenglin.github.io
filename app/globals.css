@@ -141,14 +141,15 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.4;
+  text-align: center;
 }
 
 .profile-name span {
   display: block;
   margin-top: 0.12rem;
   color: var(--muted);
-  font-family: var(--font-body);
-  font-size: 0.85em;
+  font-family: "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif;
+  font-size: 1.15em;
   font-weight: 400;
 }
 
