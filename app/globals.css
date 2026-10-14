@@ -145,11 +145,10 @@ body {
 }
 
 .profile-name span {
-  display: block;
-  margin-top: 0.12rem;
+  display: inline;
   color: var(--muted);
   font-family: "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif;
-  font-size: 1.15em;
+  font-size: 0.95em;
   font-weight: 400;
 }
 
@@ -466,7 +465,7 @@ body {
     grid-column: 1;
     grid-row: 2;
     max-width: 14rem;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .profile-lead,
