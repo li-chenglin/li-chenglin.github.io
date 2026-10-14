@@ -448,6 +448,7 @@ export default function Home() {
     <div className="site-shell min-h-screen bg-[var(--background)] text-[var(--ink)]">
       <nav className="site-nav sticky top-0 z-50" aria-label="Main navigation">
         <div className="site-container nav-inner">
+          <p className="site-slogan">I am pretty dope!</p>
           <div className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => (
             <button
