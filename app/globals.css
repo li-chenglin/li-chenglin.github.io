@@ -154,6 +154,10 @@ body {
 }
 
 .profile-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2em;
   margin-top: 0.85rem;
   color: var(--accent);
   font-size: 1.35rem;
@@ -163,12 +167,17 @@ body {
   white-space: nowrap;
 }
 
-.profile-name span {
-  display: inline;
+.profile-name-en,
+.profile-name-zh {
+  flex: 0 0 auto;
+}
+
+.profile-name-zh {
   color: var(--muted);
   font-family: "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif;
   font-size: 0.95em;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .nav-link {
@@ -492,11 +501,11 @@ body {
   }
 
   .profile-name {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
-  .profile-name span {
-    font-size: 0.85em;
+  .profile-name-zh {
+    font-size: 0.78em;
   }
 
   .profile-lead,
