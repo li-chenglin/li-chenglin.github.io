@@ -160,6 +160,7 @@ body {
   font-weight: 500;
   line-height: 1.4;
   text-align: center;
+  white-space: nowrap;
 }
 
 .profile-name span {
@@ -488,6 +489,14 @@ body {
     grid-row: 2;
     max-width: 14rem;
     margin: 0 auto;
+  }
+
+  .profile-name {
+    font-size: 1.15rem;
+  }
+
+  .profile-name span {
+    font-size: 0.85em;
   }
 
   .profile-lead,
