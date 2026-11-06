@@ -33,32 +33,36 @@ export const metadata: Metadata = {
 
 const personSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Chenglin Li",
-  alternateName: "李成林",
-  url: "https://li-chenglin.github.io/",
-  image: "https://li-chenglin.github.io/photo.jpg",
-  jobTitle: "Ph.D. Candidate in Innovation, Policy and Entrepreneurship",
-  affiliation: {
-    "@type": "CollegeOrUniversity",
-    name: "The Hong Kong University of Science and Technology (Guangzhou)",
-    url: "https://www.hkust-gz.edu.cn/",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://li-chenglin.github.io/#person",
+    name: "Chenglin Li",
+    alternateName: "李成林",
+    url: "https://li-chenglin.github.io/",
+    image: "https://li-chenglin.github.io/photo.jpg",
+    jobTitle: "Ph.D. Candidate in Innovation, Policy and Entrepreneurship",
+    affiliation: {
+      "@type": "CollegeOrUniversity",
+      name: "The Hong Kong University of Science and Technology (Guangzhou)",
+      url: "https://www.hkust-gz.edu.cn/",
+    },
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: "Sun Yat-sen University" },
+      { "@type": "CollegeOrUniversity", name: "Lanzhou University" },
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/chenglin-li-hkustgz",
+      "https://orcid.org/0009-0001-3061-1641",
+    ],
+    knowsAbout: [
+      "Energy transition",
+      "Climate policy",
+      "Environmental economics",
+      "Development economics",
+      "Political economy",
+    ],
   },
-  alumniOf: [
-    { "@type": "CollegeOrUniversity", name: "Sun Yat-sen University" },
-    { "@type": "CollegeOrUniversity", name: "Lanzhou University" },
-  ],
-  sameAs: [
-    "https://www.linkedin.com/in/chenglin-li-hkustgz",
-    "https://orcid.org/0009-0001-3061-1641",
-  ],
-  knowsAbout: [
-    "Energy transition",
-    "Climate policy",
-    "Environmental economics",
-    "Development economics",
-    "Political economy",
-  ],
 };
 
 export default function RootLayout({
