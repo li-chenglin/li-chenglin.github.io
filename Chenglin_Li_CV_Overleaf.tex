@@ -1,23 +1,19 @@
 % !TeX program = pdflatex
-\documentclass[11pt,letterpaper]{article}
+\documentclass[11pt,a4paper]{article}
 
-\usepackage[margin=0.92in]{geometry}
+\usepackage[margin=0.82in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{mathpazo}
+\usepackage{newtxtext}
 \usepackage{CJKutf8}
-\usepackage[scaled=0.92]{helvet}
 \usepackage{microtype}
-\usepackage{enumitem}
 \usepackage{tabularx}
 \usepackage{xcolor}
-\usepackage{titlesec}
 \usepackage{hyperref}
 
 \definecolor{ink}{HTML}{111111}
 \definecolor{muted}{HTML}{626262}
 \definecolor{accent}{HTML}{2258C5}
-\definecolor{rule}{HTML}{DEDEDE}
 
 \hypersetup{
   colorlinks=true,
@@ -31,129 +27,111 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\setlist[itemize]{leftmargin=1.4em, topsep=2pt, itemsep=2pt, parsep=0pt}
-
-\titleformat{\section}
-  {\large\scshape\color{ink}}
-  {}{0pt}{}
-  [\vspace{2pt}{\color{rule}\titlerule}]
-\titlespacing*{\section}{0pt}{1.15em}{0.65em}
-
 \newcommand{\cvdate}[1]{\textcolor{muted}{#1}}
-\newcommand{\cvplace}[1]{\hfill \textcolor{muted}{#1}}
-\newcommand{\papertitle}[1]{``#1''}
-\newcommand{\status}[1]{\textcolor{accent}{\textsc{#1}}}
+\newenvironment{cvsection}[1]{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.42in}%
+    \setlength{\labelwidth}{1.22in}%
+    \setlength{\labelsep}{0.2in}%
+    \setlength{\topsep}{0.9em}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+  }%
+  \item[]\noindent\llap{\parbox[t]{1.22in}{\raggedright\bfseries #1}\hspace{0.2in}}\ignorespaces
+}{\end{list}}
+\newcommand{\cvdated}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}Xr@{}}#1 & \cvdate{#2}\end{tabularx}\par
+}
+\newcommand{\cvpaper}[3]{%
+  \noindent\textbf{``#1''}, #2\par
+  \noindent #3\par\vspace{0.7em}
+}
+\newcommand{\cvwork}[3]{%
+  \noindent\textbf{``#1''}, #2 \textcolor{accent}{\textit{(#3)}}\par\vspace{0.7em}
+}
 
 \begin{document}
 
 {\centering
-  {\LARGE Chenglin Li (\begin{CJK*}{UTF8}{gbsn}李成林\end{CJK*})}\\[0.35em]
+  {\Large\scshape Chenglin Li}\quad(\begin{CJK*}{UTF8}{gbsn}李成林\end{CJK*})\par
+  \vspace{0.35em}\rule{\textwidth}{0.6pt}\par
+  \vspace{0.35em}
   Ph.D. Candidate, Innovation, Policy and Entrepreneurship\\
-  The Hong Kong University of Science and Technology (Guangzhou)\\[0.35em]
+  The Hong Kong University of Science and Technology (Guangzhou)\\[0.25em]
   \href{mailto:chenglin.li@connect.hkust-gz.edu.cn}{chenglin.li@connect.hkust-gz.edu.cn}
   \quad | \quad 606 E3 Building, HKUST(GZ), Guangzhou, China\\
   \href{https://orcid.org/0009-0001-3061-1641}{ORCID: 0009-0001-3061-1641}
-  \quad | \quad
-  \href{https://www.linkedin.com/in/chenglin-li-hkustgz}{LinkedIn}
+  \quad | \quad \href{https://www.linkedin.com/in/chenglin-li-hkustgz}{LinkedIn}
 \par}
 
-\section{Education}
+\begin{cvsection}{Education}
+\cvdated{\textbf{The Hong Kong University of Science and Technology (Guangzhou)}}{2024--present}
+Ph.D. Student in Innovation, Policy and Entrepreneurship\par\smallskip
+\cvdated{\textbf{Sun Yat-sen University}}{2021--2024}
+Master of Management in Public Administration\par\smallskip
+\cvdated{\textbf{Lanzhou University}}{2017--2021}
+Bachelor of Management in Public Administration
+\end{cvsection}
 
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X@{}}
-\cvdate{2024--present} &
-\textbf{The Hong Kong University of Science and Technology (Guangzhou)}\newline
-Ph.D. Student in Innovation, Policy and Entrepreneurship\\[0.35em]
-
-\cvdate{2021--2024} &
-\textbf{Sun Yat-sen University}\newline
-Master of Management in Public Administration\\[0.35em]
-
-\cvdate{2017--2021} &
-\textbf{Lanzhou University}\newline
-Bachelor of Management in Public Administration\\
-\end{tabularx}
-
-\section{Research Fields}
-
+\begin{cvsection}{Research Fields}
 Environmental and Energy Economics; Public and Development Economics.
+\end{cvsection}
 
-\section{Publications}
+\begin{cvsection}{Publications}
+\cvpaper{Fossil fuel occupations show high transferability across the wider economy.}
+  {Q. Huang, \textbf{C. Li}, and Y. Lu.}
+  {\textit{Communications Sustainability}, 1, 125, 2026.
+   \href{https://doi.org/10.1038/s44458-026-00131-w}{https://doi.org/10.1038/s44458-026-00131-w}.}
+\cvpaper{Fiscal Pressure and Local Government Fines Revenue.}
+  {P. Liang, Y. Guo, and \textbf{C. Li}.}
+  {\textit{Economic Theory and Business Management}, 45(5): 55--74, 2025. In Chinese, Reprinted by \href{http://en.rdfybk.com/}{\textit{China Social Science Excellence}}.}
+\end{cvsection}
 
-\begin{enumerate}[leftmargin=1.45em, label=\arabic*.]
-  \item Q. Huang, \textbf{C. Li}, and Y. Lu. \papertitle{Fossil fuel occupations show high transferability across the wider economy.}
-  \textit{Communications Sustainability}, 1, 125, 2026.
-  \href{https://doi.org/10.1038/s44458-026-00131-w}{https://doi.org/10.1038/s44458-026-00131-w}.
+\begin{cvsection}{Working Papers}
+\cvwork{Shine on Small Mines: Size-Based Economic Effects of Coal Mine Closure.}
+  {\textbf{C. Li} and Y. Lu.}{Work in Progress}
+\cvwork{Data Center Exposure and Coal Plant Retirement Timelines.}
+  {\textbf{C. Li}, Y. Zhang, Y. Xu, and Y. Lu.}{Accepted}
+\cvwork{Geopolitical Alliances Shape Foreign Direct Investment Patterns in Energy Transition Minerals.}
+  {Y. Xu, \textbf{C. Li}, J. Xiong, Y. Lu, and Y. Geng.}{Submitted}
+\cvwork{Public Toilets, Rural Health and Family Income: Evidence from China.}
+  {\textbf{C. Li}, Y. Guo, and P. Liang.}{Prepared for Submission}
+\cvwork{Why Is There So Much Surveillance in China: An Explanation from a Fiscal Perspective.}
+  {Y. Guo, \textbf{C. Li}, and P. Liang.}{R\&R}
+\end{cvsection}
 
-  \item P. Liang, Y. Guo, and \textbf{C. Li}. \papertitle{Fiscal Pressure and Local Government Fines Revenue.}
-  \textit{Economic Theory and Business Management}, 45(5): 55--74, 2025. In Chinese, Reprinted by \href{http://en.rdfybk.com/}{\textit{China Social Science Excellence}}.
-\end{enumerate}
+\begin{cvsection}{Teaching}
+\cvdated{Teaching Assistant, UCUG 1800: Technology and Innovation: Social and Business Perspectives, HKUST(GZ).}{Spring 2026}
+\vspace{0.35em}
+\cvdated{Teaching Assistant, SOCH 6780: Professional Development in Innovation, Technology, and Social Responsibility, HKUST(GZ).}{Spring 2025}
+\end{cvsection}
 
-\section{Working Papers}
+\begin{cvsection}{Research Presentations}
+\cvdated{World Congress of Environmental and Resource Economists (WCERE), Carcavelos, Portugal.}{2026}
+\cvdated{9th International Conference of China and Development Studies, Shanghai.}{2026}
+\cvdated{7th Workshop on Resource Security and Economic Sciences, Xiamen.}{2026}
+\cvdated{Chinese Young Scholars' Finance Forum, Beijing.}{2023}
+\cvdated{One Hour for Youth: Guangzhou Workshop, Guangzhou.}{2023}
+\cvdated{The 46th Camphor Economics Seminar, Lanzhou.}{2023}
+\cvdated{The 2nd Camphor Forum of Finance and Economics, Beijing.}{2023}
+\end{cvsection}
 
-\begin{enumerate}[leftmargin=1.45em, label=\arabic*.]
-  \item \textbf{C. Li} and Y. Lu. \papertitle{Shine on Small Mines: Size-Based Economic Effects of Coal Mine Closure.}
-  \status{Work in Progress}.
+\begin{cvsection}{Selected Awards and Fellowships}
+\cvdated{The Negotiation Challenge (\href{https://thenegotiationchallenge.org/}{TNC}), 5th Place Worldwide.}{2021}
+\cvdated{National First Prize, National College Student Business Negotiation Competition.}{2019}
+\cvdated{Provincial Gold Award, ``Internet+'' College Students' Innovation and Entrepreneurship Competition.}{2020}
+\cvdated{Provincial Grand Prize, ``Challenge Cup'' College Students' Extracurricular Academic and Technological Works Competition.}{2020}
+\cvdated{First-Class Scholarship, Sun Yat-sen University.}{2022--2023}
+\cvdated{Second-Class Scholarship, Sun Yat-sen University.}{2021, 2023}
+\cvdated{Provincial Outstanding Graduate Student.}{2021}
+\cvdated{First-Class Scholarship, Lanzhou University.}{2018--2020}
+\end{cvsection}
 
-  \item \textbf{C. Li}, Y. Zhang, Y. Xu, and Y. Lu. \papertitle{Data Center Exposure and Coal Plant Retirement Timelines.}
-  \status{Accepted}.
-
-  \item Y. Xu, \textbf{C. Li}, J. Xiong, Y. Lu, and Y. Geng. \papertitle{Geopolitical Alliances Shape Foreign Direct Investment Patterns in Energy Transition Minerals.}
-  \status{Submitted}.
-
-  \item \textbf{C. Li}, Y. Guo, and P. Liang. \papertitle{Public Toilets, Rural Health and Family Income: Evidence from China.}
-  \status{Prepared for Submission}.
-
-  \item Y. Guo, \textbf{C. Li}, and P. Liang. \papertitle{Why Is There So Much Surveillance in China: An Explanation from a Fiscal Perspective.}
-  \status{R\&R}.
-\end{enumerate}
-
-\section{Teaching}
-
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X@{}}
-\cvdate{Spring 2026} &
-Teaching Assistant, UCUG 1800: Technology and Innovation: Social and Business Perspectives, HKUST(GZ).\\[0.35em]
-\cvdate{Spring 2025} &
-Teaching Assistant, SOCH 6780: Professional Development in Innovation, Technology, and Social Responsibility, HKUST(GZ).\\
-\end{tabularx}
-
-\section{Research Presentations}
-
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X@{}}
-\cvdate{2026} &
-World Congress of Environmental and Resource Economists (WCERE), Carcavelos, Portugal.\\
-\cvdate{2026} &
-9th International Conference of China and Development Studies, Shanghai.\\
-\cvdate{2026} &
-7th Workshop on Resource Security and Economic Sciences, Xiamen.\\
-\cvdate{2023} &
-Chinese Young Scholars' Finance Forum, Beijing.\\
-\cvdate{2023} &
-One Hour for Youth: Guangzhou Workshop, Guangzhou.\\
-\cvdate{2023} &
-The 46th Camphor Economics Seminar, Lanzhou.\\
-\cvdate{2023} &
-The 2nd Camphor Forum of Finance and Economics, Beijing.\\
-\end{tabularx}
-
-\section{Selected Awards and Fellowships}
-
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X@{}}
-\cvdate{2021} & The Negotiation Challenge (\href{https://thenegotiationchallenge.org/}{TNC}), 5th Place Worldwide.\\
-\cvdate{2019} & National First Prize, National College Student Business Negotiation Competition.\\
-\cvdate{2020} & Provincial Gold Award, ``Internet+'' College Students' Innovation and Entrepreneurship Competition.\\
-\cvdate{2020} & Provincial Grand Prize, ``Challenge Cup'' College Students' Extracurricular Academic and Technological Works Competition.\\
-\cvdate{2022--2023} & First-Class Scholarship, Sun Yat-sen University.\\
-\cvdate{2021, 2023} & Second-Class Scholarship, Sun Yat-sen University.\\
-\cvdate{2021} & Provincial Outstanding Graduate Student.\\
-\cvdate{2018--2020} & First-Class Scholarship, Lanzhou University.\\
-\end{tabularx}
-
-\section{Skills}
-
-\begin{tabularx}{\textwidth}{@{}p{0.18\textwidth}X@{}}
-Languages & English; Mandarin (Native).\\
-Software & Python; R; Stata; ArcGIS; SPSS; LaTeX; Adobe Illustrator.\\
-\end{tabularx}
+\begin{cvsection}{Skills}
+\textbf{Languages}\quad English; Mandarin (Native).\par
+\textbf{Software}\quad Python; R; Stata; ArcGIS; SPSS; LaTeX; Adobe Illustrator.
+\end{cvsection}
 
 \vfill
 {\footnotesize\textcolor{muted}{Last updated: November 2026}}
