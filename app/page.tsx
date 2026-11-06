@@ -382,7 +382,7 @@ export default function Home() {
       case 'research':
         return (
           <div className="site-container archive-page">
-            <section className="editorial-section">
+            <section className="editorial-section working-papers-section">
               <SectionHeader eyebrow="Working Papers" title="" />
               <div>
                 {workingPapers.map((paper) => (

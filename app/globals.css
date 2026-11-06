@@ -358,6 +358,12 @@ html {
   line-height: 1.7;
 }
 
+.working-papers-section .paper-meta,
+.teaching-item .paper-meta {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
 .paper-meta .normal-case {
   letter-spacing: 0;
 }
