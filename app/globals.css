@@ -82,6 +82,10 @@ body {
   font-family: var(--font-body);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -117,7 +121,9 @@ body {
 
 .site-nav {
   border-top: 5px solid var(--accent);
-  background: var(--paper);
+  background: rgb(255 255 255 / 88%);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
 }
 
 .site-container {
@@ -323,6 +329,7 @@ body {
 .paper-item {
   border-bottom: 1px solid var(--line);
   padding-block: 1.75rem;
+  transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .paper-item:first-child,
@@ -373,6 +380,24 @@ body {
 .teaching-item {
   padding-block: 1.75rem;
   border-bottom: 1px solid var(--line);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+@media (hover: hover) {
+  .paper-item:hover,
+  .teaching-item:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .interest-item {
+    transition: border-color 180ms ease, transform 180ms ease;
+  }
+
+  .interest-item:hover {
+    border-color: rgb(255 255 255 / 70%);
+    transform: translateX(4px);
+  }
 }
 
 .teaching-title {
@@ -531,6 +556,12 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .page-content {
     animation: page-appear 240ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
