@@ -231,25 +231,6 @@ html {
   min-width: 0;
 }
 
-.profile-label {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-.profile-label::after {
-  width: 2rem;
-  height: 1px;
-  background: currentColor;
-  content: "";
-}
-
 .profile-lead {
   font-size: 0.96rem;
   font-weight: 400;
@@ -286,7 +267,7 @@ html {
   grid-row: 1;
   width: 100%;
   max-width: 17rem;
-  margin-top: 2.6rem;
+  margin-top: 0;
 }
 
 .profile-contact {

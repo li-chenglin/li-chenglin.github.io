@@ -241,9 +241,6 @@ export default function Home() {
             <section className="site-container profile-section">
               <div className="profile-layout">
                 <div className="profile-copy">
-                    <h1 className="profile-label">
-                    Academic Profile
-                  </h1>
                   <p className="profile-lead">
                     I am a Ph.D. candidate in Innovation, Policy and Entrepreneurship at{' '}
                     <a
@@ -333,10 +330,10 @@ export default function Home() {
                     priority
                     className="aspect-[4/5] w-full object-cover object-[50%_32%]"
                   />
-                  <h2 className="profile-name font-section">
+                  <h1 className="profile-name font-section">
                     <span className="profile-name-en">Chenglin Li</span>
                     <span lang="zh" className="profile-name-zh">(李成林)</span>
-                  </h2>
+                  </h1>
                 </div>
               </div>
             </section>
