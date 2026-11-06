@@ -267,6 +267,8 @@ html {
 
 .profile-copy p a {
   font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #a8a8a8;
 }
 
 .profile-portrait {
@@ -497,7 +499,7 @@ html {
   }
 
   .site-slogan {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .profile-section,
@@ -549,6 +551,12 @@ html {
 
   .interest-list {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 359px) {
+  .site-slogan {
+    font-size: 1.35rem;
   }
 }
 
