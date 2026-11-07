@@ -172,17 +172,8 @@ html {
   white-space: nowrap;
 }
 
-.profile-name-en,
-.profile-name-zh {
+.profile-name-en {
   flex: 0 0 auto;
-}
-
-.profile-name-zh {
-  color: var(--muted);
-  font-family: "Ma Shan Zheng", "Kaiti SC", "KaiTi", serif;
-  font-size: 0.95em;
-  font-weight: 400;
-  white-space: nowrap;
 }
 
 .nav-link {
@@ -539,10 +530,6 @@ html {
 
   .profile-name {
     font-size: 1rem;
-  }
-
-  .profile-name-zh {
-    font-size: 0.78em;
   }
 
   .profile-lead,

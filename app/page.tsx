@@ -332,7 +332,6 @@ export default function Home() {
                   />
                   <h1 className="profile-name font-section">
                     <span className="profile-name-en">Chenglin Li</span>
-                    <span lang="zh" className="profile-name-zh">(李成林)</span>
                   </h1>
                 </div>
               </div>
